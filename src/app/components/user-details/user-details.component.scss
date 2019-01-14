@@ -1,0 +1,37 @@
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content : space-between;
+	align-items : center;
+	margin-top: 15px;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(0,0,30,0.8);
+}
+
+.left-container{
+	display : flex;
+	flex-direction: row;
+	justify-content : space-around;
+	& .user-info{
+		align-self : center;
+		margin-left : 10px;
+
+		& h4{
+			font-size: 0.95rem;
+			margin:0;
+		}
+		span{
+			font-size: 0.77rem;
+		}
+	}
+}
+.right-container{
+	justify-content: flex-end;
+}

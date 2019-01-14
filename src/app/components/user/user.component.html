@@ -1,0 +1,14 @@
+
+	<div class="card" >
+		<div class="avatar" (click)="goToUserDetails(user)">
+            <img [src]="user.avatar_url" alt="user.login">
+        </div>
+
+		<div class="content">
+            <h4 class="username">{{user.login | titlecase}} </h4>
+			<p>{{user.type}}</p>
+
+            <ng-content></ng-content>
+
+        </div>
+	</div>

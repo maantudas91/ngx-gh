@@ -1,0 +1,30 @@
+<div class="row">
+
+	<div class="container">
+
+		<div class="left-container">
+			<div class="avatar" >
+    			<img [src]="user?.avatar_url" alt="user.login">
+    		</div>
+    		<div class="user-info">
+    			<h4>{{user?.login | titlecase}}</h4>
+    			<span>{{user?.type}}</span>
+    		</div>
+		</div>
+
+		<div class="right-container">
+			<button class="btn btn-sm" (click)="goBack()">< Back</button>
+		</div>
+	</div>
+	
+</div>
+
+<hr/>
+
+<table>
+<tr *ngFor="let u of user | key">
+	<td> {{u[key]}}</td>
+	<td></td>
+</tr>
+</table>
+
