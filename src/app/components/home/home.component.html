@@ -2,10 +2,10 @@
 <input type="text" class="form-control" placeholder="Search here...">
 
 <div  class="row">
-	<div class="col-md-3" *ngFor="let user of users | slice:0:8">
+	<div class="col-md-3" *ngFor="let user of users | slice:0:8; let i=index">
 		<app-user [user]="user">
 			<button type="button" class="btn btn-sm">Add</button>
-			<button type="button" class="btn btn-sm" (click)="cancel(user)">Cancel</button>
+			<button type="button" class="btn btn-sm" (click)="cancel(user, i)">Cancel</button>
 		</app-user>
 	</div>
 </div>

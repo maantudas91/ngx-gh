@@ -21,8 +21,10 @@ export class HomeComponent implements OnInit {
   }
 
 
-  cancel(user:User){
+  cancel(user:User, index){
     console.log(user);
+    //this.users.filter( u => u.id != user.id);
+    this.users.splice(index,1);
   }
 
 }
