@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { KeyPipe } from './key.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
-  declarations: [KeyPipe],
+  declarations: [KeyPipe, FilterPipe],
   imports: [
   ],
-  exports:[KeyPipe]
+  exports:[KeyPipe, FilterPipe]
 })
 export class PipeModule { }
