@@ -1,11 +1,18 @@
 <div class="card">
-		<div class="card-header">Shortlisted</div>
+		<div class="card-header">Shortlisted Users</div>
 		<div class="card-body">
 			<div class="row">
-			<div class="col-md-3" *ngFor="let user of users">
-				<app-user [user]="user">
-					<button type="button" class="btn btn-sm">Remove</button>
-				</app-user>
-			</div>
+			<ng-container *ngIf="(users$ | async)?.length > 0; else noUser">
+				<div class="col-md-3" *ngFor="let user of (users$ | async | slice:0:3)">
+					<app-user [user]="user">
+						<button type="button" class="btn btn-sm" (click)="remove(user)">Remove</button>
+					</app-user>
+				</div>
+				<button *ngIf="(users$ | async)?.length > 3">+ Show More</button>
+			</ng-container>
+
+			<ng-template #noUser>
+					<h4 class="nouser-text">There is no selected user yet</h4>
+			</ng-template>
 		</div>
 		</div>
