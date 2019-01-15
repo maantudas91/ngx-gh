@@ -21,10 +21,10 @@
 
 <hr/>
 
-<table>
-<tr *ngFor="let u of user | key">
-	<td> {{u[key]}}</td>
-	<td></td>
+<table class="table table-bordered">
+<tr *ngFor="let user of userDataArray">
+	<td> {{user.key}}</td>
+	<td>{{user.value}}</td>
 </tr>
 </table>
 
