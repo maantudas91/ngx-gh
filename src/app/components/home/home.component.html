@@ -1,13 +1,15 @@
 
-<input type="text" class="form-control" placeholder="Search here...">
+<input type="text" class="form-control" placeholder="Search here..." #searchText (keydown)="onKeydown($event,searchText)">
 
 <div  class="row">
-	<div class="col-md-3" *ngFor="let user of users | slice:0:8; let i=index">
+	<ng-container *ngIf="users.length >0">
+	<div class="col-md-3" *ngFor="let user of users |  filter: search |slice:0:8; let i=index">
 		<app-user [user]="user">
-			<button type="button" class="btn btn-sm">Add</button>
-			<button type="button" class="btn btn-sm" (click)="cancel(user, i)">Cancel</button>
+			<button type="button" class="btn btn-sm" (click)=shortList(user)>Add</button>
+			<button type="button" class="btn btn-sm cancel-btn" (click)="cancel(user, i)">Cancel</button>
 		</app-user>
 	</div>
+	</ng-container>		
 </div>
 
 
