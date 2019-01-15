@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { UserModule } from '../user';
 import { CommonModule } from '@angular/common';
 import { ShortlistedUsersModule } from '../shortlisted-users';
+import { PipeModule } from '../../pipes';
 
 const routes = [
   { path: '', component: HomeComponent }
@@ -17,7 +18,8 @@ const routes = [
     RouterModule.forChild(routes),
     CommonModule,
     UserModule,
-    ShortlistedUsersModule
+    ShortlistedUsersModule,
+    PipeModule
   ],
   providers: []
 })
